@@ -142,6 +142,8 @@ class DataFeeder(object):
 
                 if hparams.upsample_conditional_features:
                     wav = wav.reshape(-1, 1)
+                    print('wav_shape:', wav.shape)
+                    print('local_condition shape:', local_condition.shape)
                     assert_ready_for_upsampling(wav, local_condition)
                     if self.sample_size is not None:
                         sample_size = ensure_divisible(self.sample_size, audio.get_hop_size(), True)
