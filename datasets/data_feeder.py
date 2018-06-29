@@ -18,6 +18,7 @@ def get_file_list(metadata_filename, npy_dataroot, speaker_id):
             wav_path = line[0]
             local_condition_path = os.path.join(npy_dataroot, local_condition_path)
             wav_path = os.path.join(npy_dataroot, wav_path) + '-mel.npy'
+            local_condition_path = os.path.join(npy_dataroot, wav_path) + '-audio.npy'
             if len(line) == 5:
                 global_condition = int(line[4])
             else:
